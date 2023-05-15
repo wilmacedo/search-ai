@@ -2,6 +2,7 @@ import BFS from "../assets/bfs.svg";
 import DFS from "../assets/dfs.png";
 import Bfs from "../components/bfs";
 import Dfs from "../components/dfs";
+import Ucs from "../components/ucs";
 
 interface SearchType {
   name: string;
@@ -31,7 +32,8 @@ const searchTypes: SearchType[] = [
   {
     name: "Busca de Custo Uniforme",
     prefix: "Uniforme",
-    description: "adssdasdadas",
+    description: "A busca de custo uniforme (Uniform Cost Search - UCS) é um algoritmo de busca utilizado para encontrar o caminho de menor custo em um grafo ponderado. Ao contrário da busca em largura, que explora todos os nós em uma camada antes de passar para a próxima, a UCS leva em consideração o custo de cada aresta ao determinar a ordem de exploração.",
+    component: Ucs
   },
   {
     name: "Busca Gulosa",
