@@ -1,3 +1,5 @@
+import treeNode from "./data";
+
 export class Node {
   value: string;
   children: Node[];
@@ -47,6 +49,17 @@ const bfs = (startNode: Node, targetValue: string) => {
   }
 
   return null;
+};
+
+export const getTraveledPath = (initialNode: string, endNode: string) => {
+  const startNode = treeNode(initialNode);
+
+  const path = bfs(startNode || new Node("A"), endNode);
+  if (!path) return undefined;
+
+  console.log(path);
+
+  return path.map((node) => node.value);
 };
 
 export default bfs;

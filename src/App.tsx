@@ -1,6 +1,6 @@
 import { useState } from "react";
 import DF from "./assets/dfs.png";
-import bfs from "./components/bfs";
+import Bfs from "./components/bfs";
 import data from "./config/data";
 
 function App() {
@@ -14,12 +14,12 @@ function App() {
   };
 
   return (
-    <div>
-      <div className="font-sans p-4 bg-slate-100 w-fit h-screen shadow-md">
+    <div className="flex flex-row gap-4">
+      <div className="font-sans p-4 bg-slate-100 w-fit h-screen shadow-md fixed">
         <div className="flex flex-row gap-4">
           {data.map((type, index) => (
             <button
-              className={`text-sm text-slate-600 hover:text-slate-950 data-[selected=true]:text-slate-950`}
+              className={`text-sm text-slate-600 hover:text-slate-950 data-[selected=true]:text-slate-950 data-[selected=true]:font-bold`}
               key={index}
               data-selected={data[selectedSearch] === type}
               onClick={() => handleSearchType(type.prefix)}
@@ -45,7 +45,10 @@ function App() {
             {data[selectedSearch].description}
           </p>
         </div>
-        <div>ola{bfs("A", "F")}</div>
+      </div>
+
+      <div className="pl-[24rem] pt-4 flex items-center justify-center">
+        <Bfs />
       </div>
     </div>
   );
