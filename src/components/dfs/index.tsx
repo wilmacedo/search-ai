@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { getTraveledPath } from "./algorithm";
 import { allNodes } from "./data";
 import "./styles.css";
 
@@ -30,7 +29,11 @@ function Dfs() {
     setTraveledPath(visitedNodes);
   };
 
-  const dfs = (currentNode: string, targetNode: string, visitedNodes: string[]) => {
+  const dfs = (
+    currentNode: string,
+    targetNode: string,
+    visitedNodes: string[]
+  ) => {
     visitedNodes.push(currentNode);
     if (currentNode === targetNode) {
       return true;
@@ -99,8 +102,7 @@ function Dfs() {
             <li>
               <a
                 data-selected={traveledPath.includes("a")}
-                className="cursor-pointer hover:bg-[#c8e4f8] hover:color-[#000] hover:border-[#94a0b4] 
-              data-[selected=true]:bg-[#c8e4f8] data-[selected=true]:color-[#000] data-[selected=true]:border-[#94a0b4]"
+                className="data-[selected=true]:bg-[#c8e4f8] data-[selected=true]:color-[#000] data-[selected=true]:border-[#94a0b4]"
               >
                 <span>a</span>
               </a>
@@ -108,8 +110,7 @@ function Dfs() {
                 <li>
                   <a
                     data-selected={traveledPath.includes("b")}
-                    className="cursor-pointer hover:bg-[#c8e4f8] hover:color-[#000] hover:border-[#94a0b4] 
-                  data-[selected=true]:bg-[#c8e4f8] data-[selected=true]:color-[#000] data-[selected=true]:border-[#94a0b4]"
+                    className="data-[selected=true]:bg-[#c8e4f8] data-[selected=true]:color-[#000] data-[selected=true]:border-[#94a0b4]"
                   >
                     <span>b</span>
                   </a>
@@ -117,8 +118,7 @@ function Dfs() {
                     <li>
                       <a
                         data-selected={traveledPath.includes("e")}
-                        className="cursor-pointer hover:bg-[#c8e4f8] hover:color-[#000] hover:border-[#94a0b4] 
-                      data-[selected=true]:bg-[#c8e4f8] data-[selected=true]:color-[#000] data-[selected=true]:border-[#94a0b4]"
+                        className="data-[selected=true]:bg-[#c8e4f8] data-[selected=true]:color-[#000] data-[selected=true]:border-[#94a0b4]"
                       >
                         <span>e</span>
                       </a>
@@ -126,8 +126,7 @@ function Dfs() {
                     <li>
                       <a
                         data-selected={traveledPath.includes("f")}
-                        className="cursor-pointer hover:bg-[#c8e4f8] hover:color-[#000] hover:border-[#94a0b4] 
-                      data-[selected=true]:bg-[#c8e4f8] data-[selected=true]:color-[#000] data-[selected=true]:border-[#94a0b4]"
+                        className="data-[selected=true]:bg-[#c8e4f8] data-[selected=true]:color-[#000] data-[selected=true]:border-[#94a0b4]"
                       >
                         <span>f</span>
                       </a>
@@ -137,8 +136,7 @@ function Dfs() {
                 <li>
                   <a
                     data-selected={traveledPath.includes("c")}
-                    className="cursor-pointer hover:bg-[#c8e4f8] hover:color-[#000] hover:border-[#94a0b4] 
-                  data-[selected=true]:bg-[#c8e4f8] data-[selected=true]:color-[#000] data-[selected=true]:border-[#94a0b4]"
+                    className="data-[selected=true]:bg-[#c8e4f8] data-[selected=true]:color-[#000] data-[selected=true]:border-[#94a0b4]"
                   >
                     <span>c</span>
                   </a>
@@ -146,8 +144,7 @@ function Dfs() {
                 <li>
                   <a
                     data-selected={traveledPath.includes("d")}
-                    className="cursor-pointer hover:bg-[#c8e4f8] hover:color-[#000] hover:border-[#94a0b4] 
-                  data-[selected=true]:bg-[#c8e4f8] data-[selected=true]:color-[#000] data-[selected=true]:border-[#94a0b4]"
+                    className="data-[selected=true]:bg-[#c8e4f8] data-[selected=true]:color-[#000] data-[selected=true]:border-[#94a0b4]"
                   >
                     <span>d</span>
                   </a>
@@ -155,8 +152,7 @@ function Dfs() {
                     <li>
                       <a
                         data-selected={traveledPath.includes("g")}
-                        className="cursor-pointer hover:bg-[#c8e4f8] hover:color-[#000] hover:border-[#94a0b4] 
-                      data-[selected=true]:bg-[#c8e4f8] data-[selected=true]:color-[#000] data-[selected=true]:border-[#94a0b4]"
+                        className="data-[selected=true]:bg-[#c8e4f8] data-[selected=true]:color-[#000] data-[selected=true]:border-[#94a0b4]"
                       >
                         <span>g</span>
                       </a>
@@ -164,8 +160,7 @@ function Dfs() {
                     <li>
                       <a
                         data-selected={traveledPath.includes("h")}
-                        className="cursor-pointer hover:bg-[#c8e4f8] hover:color-[#000] hover:border-[#94a0b4] 
-                      data-[selected=true]:bg-[#c8e4f8] data-[selected=true]:color-[#000] data-[selected=true]:border-[#94a0b4]"
+                        className="data-[selected=true]:bg-[#c8e4f8] data-[selected=true]:color-[#000] data-[selected=true]:border-[#94a0b4]"
                       >
                         <span>h</span>
                       </a>
@@ -176,6 +171,13 @@ function Dfs() {
             </li>
           </ul>
         </div>
+
+        {traveledPath.length > 0 && (
+          <span>
+            Caminho percorrido:{" "}
+            {traveledPath.map((path) => path.toUpperCase()).join(" -> ")}
+          </span>
+        )}
       </div>
     </div>
   );
