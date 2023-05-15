@@ -1,11 +1,13 @@
 import BFS from "../assets/bfs.svg";
 import DFS from "../assets/dfs.png";
+import Bfs from "../components/bfs";
 
 interface SearchType {
   name: string;
   prefix: string;
   description: string;
   image?: string;
+  component?: React.FC;
 }
 
 const searchTypes: SearchType[] = [
@@ -15,6 +17,7 @@ const searchTypes: SearchType[] = [
     description:
       "Na teoria dos grafos, busca em largura é um algoritmo de busca em grafos utilizado para realizar uma busca ou travessia num grafo e estrutura de dados do tipo árvore. Intuitivamente, você começa pelo vértice raiz e explora todos os vértices vizinhos. Então, para cada um desses vértices mais próximos, exploramos os seus vértices vizinhos inexplorados e assim por diante, até que ele encontre o alvo da busca.",
     image: BFS,
+    component: Bfs,
   },
   {
     name: "Busca em Profundidade",

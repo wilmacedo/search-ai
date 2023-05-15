@@ -1,10 +1,13 @@
 import { useState } from "react";
 import DF from "./assets/dfs.png";
-import Bfs from "./components/bfs";
 import data from "./config/data";
 
 function App() {
   const [selectedSearch, setSelectedSearch] = useState(0);
+
+  const NotImplemented: React.FC = () => <span>Não implementado</span>;
+
+  const Component = data[selectedSearch].component || NotImplemented;
 
   const handleSearchType = (type: string) => {
     const index = data.findIndex((searchType) => searchType.prefix === type);
@@ -48,7 +51,7 @@ function App() {
       </div>
 
       <div className="pl-[24rem] pt-4 flex items-center justify-center">
-        <Bfs />
+        <Component />
       </div>
     </div>
   );
