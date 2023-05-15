@@ -1,5 +1,5 @@
-import PriorityQueue from "./priorityQueue";
 import treeNode from "./data";
+import PriorityQueue from "./priorityQueue";
 
 export class Node {
   value: string;
@@ -18,7 +18,9 @@ export class Node {
 }
 
 const ucs = (startNode: Node, endNode: string): Node[] | null => {
-  const priorityQueue = new PriorityQueue<Node>((a: any, b: any) => a.cost - b.cost);
+  const priorityQueue = new PriorityQueue<Node>(
+    (a: any, b: any) => a.cost - b.cost
+  );
   const visited = new Set<Node>();
   const path = new Map<Node, Node>();
 
@@ -76,7 +78,7 @@ export const getTraveledPath = (initialNode: string, endNode: string) => {
   }
 
   return {
-    paths: pathNodes.map(path => path.value),
-    cost: pathNodes.map(path => path.cost)
-  }
+    paths: pathNodes.map((path) => path.value),
+    cost: pathNodes[pathNodes.length - 1].cost,
+  };
 };

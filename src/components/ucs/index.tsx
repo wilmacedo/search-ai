@@ -7,6 +7,7 @@ function Ucs() {
   const [startValue, setStartValue] = useState("");
   const [endValue, setEndValue] = useState("");
   const [traveledPath, setTraveledPath] = useState<string[]>([]);
+  const [totalCoast, setTotalCoast] = useState(-1);
 
   const handleSelect = (
     event: React.ChangeEvent<HTMLSelectElement>,
@@ -27,7 +28,7 @@ function Ucs() {
 
     const traveledPath = getTraveledPath(startValue, endValue);
     setTraveledPath(traveledPath?.paths || []);
-    console.log(traveledPath?.cost)
+    setTotalCoast(traveledPath?.cost || 0);
   };
 
   return (
@@ -157,6 +158,16 @@ function Ucs() {
           </ul>
         </div>
       </div>
+
+      {traveledPath.length > 0 && (
+        <div className="flex flex-col">
+          <span>
+            Caminho percorrido:{" "}
+            {traveledPath.map((path) => path.toUpperCase()).join(" -> ")}
+          </span>
+          <span>Custo total: {totalCoast}</span>
+        </div>
+      )}
     </div>
   );
 }
