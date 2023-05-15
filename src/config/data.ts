@@ -40,6 +40,11 @@ const searchTypes: SearchType[] = [
     prefix: "Gulosa",
     description: "adssdasdadas",
   },
+  {
+    name: "Busca A*",
+    prefix: "A*",
+    description: "adssdasdadas",
+  },
 ];
 
 export default searchTypes;
