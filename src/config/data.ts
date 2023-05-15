@@ -1,6 +1,7 @@
 import BFS from "../assets/bfs.svg";
 import DFS from "../assets/dfs.png";
 import Bfs from "../components/bfs";
+import Dfs from "../components/dfs";
 
 interface SearchType {
   name: string;
@@ -25,6 +26,7 @@ const searchTypes: SearchType[] = [
     description:
       "Na teoria dos grafos, busca em profundidade é um algoritmo usado para realizar uma busca ou travessia numa árvore, estrutura de árvore ou grafo. Intuitivamente, o algoritmo começa num nó raiz e explora tanto quanto possível cada um dos seus ramos, antes de retroceder.",
     image: DFS,
+    component: Dfs,
   },
   {
     name: "Busca de Custo Uniforme",
