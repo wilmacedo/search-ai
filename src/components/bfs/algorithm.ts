@@ -54,10 +54,8 @@ const bfs = (startNode: Node, targetValue: string) => {
 export const getTraveledPath = (initialNode: string, endNode: string) => {
   const startNode = treeNode(initialNode);
 
-  const path = bfs(startNode || new Node("A"), endNode);
+  const path = bfs(startNode || new Node("a"), endNode);
   if (!path) return undefined;
-
-  console.log(path);
 
   return path.map((node) => node.value);
 };
