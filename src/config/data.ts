@@ -1,5 +1,6 @@
 import BFS from "../assets/bfs.svg";
 import DFS from "../assets/dfs.png";
+import BestChoice from "../components/bc";
 import Bfs from "../components/bfs";
 import Dfs from "../components/dfs";
 import Ucs from "../components/ucs";
@@ -39,6 +40,7 @@ const searchTypes: SearchType[] = [
     name: "Busca Gulosa",
     prefix: "Gulosa",
     description: "adssdasdadas",
+    component: BestChoice
   },
   {
     name: "Busca A*",
